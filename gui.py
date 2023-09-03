@@ -20,6 +20,14 @@ class GUIWindow(QMainWindow):
         # Change the background colour
         self.setStyleSheet("background-color: #133C55;")
 
+        # Insert the logo image
+        logoLabel = QLabel(self)
+        logoPixmap = QPixmap("Forecast Tool Logo.png")
+        logoLabel.setPixmap(logoPixmap)
+        logoLabel.move(30, 30)
+        logoLabel.setScaledContents(True)
+        logoLabel.resize(200,100)
+
 
         # Windows are hidden by default, must run this command AT END to show!
         self.show()
