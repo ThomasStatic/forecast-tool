@@ -12,7 +12,7 @@ class GUIWindow(QMainWindow):
         self.setWindowTitle("Forecast Tool")
 
         # Change the window icon
-        self.setWindowIcon(QIcon('Forecast Tool Logo.png'))
+        self.setWindowIcon(QIcon('Forecast Tool Icon.png'))
 
         # Resize the window
         self.resize(1000,750)
