@@ -22,11 +22,13 @@ class GUIWindow(QMainWindow):
 
         # Insert the logo image
         logoLabel = QLabel(self)
-        logoPixmap = QPixmap("Forecast Tool Logo.png")
+        logoPixmap = QPixmap("Forecast Tool Icon.png")
         logoLabel.setPixmap(logoPixmap)
-        logoLabel.move(30, 30)
+        logoLabel.move(20, 20)
         logoLabel.setScaledContents(True)
-        logoLabel.resize(200,100)
+        logoLabel.resize(200,200)
+
+
 
 
         # Windows are hidden by default, must run this command AT END to show!
