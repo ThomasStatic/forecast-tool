@@ -28,6 +28,27 @@ class GUIWindow(QMainWindow):
         logoLabel.setScaledContents(True)
         logoLabel.resize(200,200)
 
+        # Insert version label
+        versionLabel = QLabel(self)
+        versionLabel.setText("Version: 1.0")
+        versionLabel.setStyleSheet("color: white;")
+        versionLabel.move(930, 0)
+
+        # Create label for data file upload
+        dataUploadLabel = QLabel(self)
+        dataUploadLabel.setText("Data File:")
+        dataUploadLabel.setStyleSheet("color: #36F1CD;")
+        dataUploadLabel.setFont(QFont('Arial', 20))
+        dataUploadLabel.adjustSize()
+        dataUploadLabel.move(60, 250)
+
+        # Create the button to upload a data file
+        uploadButton = QPushButton(self)
+        uploadButton.setText("Upload")
+        uploadButton.setFont(QFont('Arial', 10))
+        uploadButton.setStyleSheet("background-color: #80475E; color: #5FBFF9;")
+        uploadButton.setGeometry(750,250, 200, 40)
+
 
 
 
