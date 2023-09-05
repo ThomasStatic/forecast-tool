@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+from PyQt5 import QtCore
 
 # Needed for access to command line arguments
 import sys
@@ -48,12 +49,17 @@ class GUIWindow(QMainWindow):
         uploadButton.setFont(QFont('Arial', 10))
         uploadButton.setStyleSheet("background-color: #80475E; color: #5FBFF9;")
         uploadButton.setGeometry(750,250, 200, 40)
+        uploadButton.clicked.connect(self.upload_button_click)
 
 
 
 
         # Windows are hidden by default, must run this command AT END to show!
         self.show()
+
+    def upload_button_click(self):
+        filename = QFileDialog.getOpenFileName(self, 'Open File', '.')
+        print('Path file :', filename)
 
 
 # Allows app to utilize command line arguments
@@ -64,5 +70,7 @@ window = GUIWindow()
 
 # Start the app, return an actual exit code
 sys.exit(app.exec())
+
+
 
 
