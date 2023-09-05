@@ -58,7 +58,7 @@ class GUIWindow(QMainWindow):
         self.show()
 
     def upload_button_click(self):
-        filename = QFileDialog.getOpenFileName(self, 'Open File', '.')
+        filename = QFileDialog.getOpenFileName(self, 'Open File', '*.xlsx')
         print('Path file :', filename)
 
 
