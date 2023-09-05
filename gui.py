@@ -41,7 +41,7 @@ class GUIWindow(QMainWindow):
         dataUploadLabel.setStyleSheet("color: #36F1CD;")
         dataUploadLabel.setFont(QFont('Arial', 20))
         dataUploadLabel.adjustSize()
-        dataUploadLabel.move(60, 250)
+        dataUploadLabel.move(80, 250)
 
         # Create the button to upload a data file
         uploadButton = QPushButton(self)
@@ -50,6 +50,14 @@ class GUIWindow(QMainWindow):
         uploadButton.setStyleSheet("background-color: #80475E; color: #5FBFF9;")
         uploadButton.setGeometry(750,250, 200, 40)
         uploadButton.clicked.connect(self.upload_button_click)
+
+        # Create the label for date column text input
+        dateColLabel = QLabel(self)
+        dateColLabel.setText("Date Column Name:")
+        dateColLabel.setStyleSheet("color: #36F1CD;")
+        dateColLabel.setFont(QFont('Arial', 20))
+        dateColLabel.adjustSize()
+        dateColLabel.move(20, 350)
 
 
 
