@@ -81,6 +81,50 @@ class GUIWindow(QMainWindow):
         dataColTextbox.resize(300, 35)
         dataColTextbox.move(680, 450)
 
+        # Create a label for the number of independent variables
+        indepVarLabel = QLabel(self)
+        indepVarLabel.setText("Number of independent variables:")
+        indepVarLabel.setStyleSheet("color: #36F1CD;")
+        indepVarLabel.setFont(QFont('Arial', 20))
+        indepVarLabel.adjustSize()
+        indepVarLabel.move(20, 550)
+
+        # Create a group to contain the radio buttons
+        indepVarButtonGroup = QButtonGroup(self)
+
+        # Create the radio buttons
+        zeroIndepVarRB = QRadioButton("0", self)
+        zeroIndepVarRB.setChecked(True) # Set the default value to 0 independent variables
+        oneIndepVarRB = QRadioButton("1", self)
+        twoIndepVarRB = QRadioButton("2", self)
+        threeIndepVarRB = QRadioButton("3", self)
+        fourIndepVarRB = QRadioButton("4", self)
+        fiveIndepVarRB = QRadioButton("5", self)
+
+        # Add the radio buttons to the same group
+        indepVarButtonGroup.addButton(zeroIndepVarRB)
+        indepVarButtonGroup.addButton(oneIndepVarRB)
+        indepVarButtonGroup.addButton(twoIndepVarRB)
+        indepVarButtonGroup.addButton(threeIndepVarRB)
+        indepVarButtonGroup.addButton(fourIndepVarRB)
+        indepVarButtonGroup.addButton(fiveIndepVarRB)
+
+        # Move the radio buttons into place
+        zeroIndepVarRB.move(450, 553)
+        oneIndepVarRB.move(500, 553)
+        twoIndepVarRB.move(550, 553)
+        threeIndepVarRB.move(600, 553)
+        fourIndepVarRB.move(650, 553)
+        fiveIndepVarRB.move(700, 553)
+
+        # Change the font colour of the buttons 
+        zeroIndepVarRB.setStyleSheet("color: #36F1CD")
+        oneIndepVarRB.setStyleSheet("color: #36F1CD")
+        twoIndepVarRB.setStyleSheet("color: #36F1CD")
+        threeIndepVarRB.setStyleSheet("color: #36F1CD")
+        fourIndepVarRB.setStyleSheet("color: #36F1CD")
+        fiveIndepVarRB.setStyleSheet("color: #36F1CD")
+        
 
 
 
