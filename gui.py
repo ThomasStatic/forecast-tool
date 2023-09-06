@@ -59,6 +59,13 @@ class GUIWindow(QMainWindow):
         dateColLabel.adjustSize()
         dateColLabel.move(20, 350)
 
+        # Create the text box for date column
+        dateColTextbox = QLineEdit(self)
+        dateColTextbox.setFont(QFont("Arial", 15))
+        dateColTextbox.setStyleSheet("background-color: white;")
+        dateColTextbox.resize(300, 35)
+        dateColTextbox.move(680, 350)
+
 
 
 
