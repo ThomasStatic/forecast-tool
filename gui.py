@@ -66,6 +66,22 @@ class GUIWindow(QMainWindow):
         dateColTextbox.resize(300, 35)
         dateColTextbox.move(680, 350)
 
+        # Create the label for the data column text input
+        dataColLabel = QLabel(self)
+        dataColLabel.setText("Data Column Name:")
+        dataColLabel.setStyleSheet("color: #36F1CD;")
+        dataColLabel.setFont(QFont('Arial', 20))
+        dataColLabel.adjustSize()
+        dataColLabel.move(20, 450)
+
+        # Create the text box for data column
+        dataColTextbox = QLineEdit(self)
+        dataColTextbox.setFont(QFont("Arial", 15))
+        dataColTextbox.setStyleSheet("background-color: white;")
+        dataColTextbox.resize(300, 35)
+        dataColTextbox.move(680, 450)
+
+
 
 
 
