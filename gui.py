@@ -12,7 +12,7 @@ class GUIWindow(QMainWindow):
         # Change the title of the window
         self.setWindowTitle("Forecast Tool")
 
-        # Change the window icon
+        # Change the window icon to the forecast logo
         self.setWindowIcon(QIcon('Forecast Tool Icon.png'))
 
         # Resize the window
@@ -21,123 +21,128 @@ class GUIWindow(QMainWindow):
         # Change the background colour
         self.setStyleSheet("background-color: #133C55;")
 
-        # Insert the logo image
-        logoLabel = QLabel(self)
-        logoPixmap = QPixmap("Forecast Tool Icon.png")
-        logoLabel.setPixmap(logoPixmap)
-        logoLabel.move(20, 20)
-        logoLabel.setScaledContents(True)
-        logoLabel.resize(200,200)
+        # Place the forecast logo onto the window
+        self.logoLabel = QLabel(self)
+        self.logoPixmap = QPixmap("Forecast Tool Icon.png")
+        self.logoLabel.setPixmap(self.logoPixmap)
+        self.logoLabel.move(20, 20)
+        self.logoLabel.setScaledContents(True) # Set the label to not stretch the image file
+        self.logoLabel.resize(200,200)
 
         # Insert version label
-        versionLabel = QLabel(self)
-        versionLabel.setText("Version: 1.0")
-        versionLabel.setStyleSheet("color: white;")
-        versionLabel.move(930, 0)
+        self.versionLabel = QLabel(self)
+        self.versionLabel.setText("Version: 1.0")
+        self.versionLabel.setStyleSheet("color: white;")
+        self.versionLabel.move(930, 0)
 
         # Create label for data file upload
-        dataUploadLabel = QLabel(self)
-        dataUploadLabel.setText("Data File:")
-        dataUploadLabel.setStyleSheet("color: #36F1CD;")
-        dataUploadLabel.setFont(QFont('Arial', 20))
-        dataUploadLabel.adjustSize()
-        dataUploadLabel.move(80, 250)
+        self.dataUploadLabel = QLabel(self)
+        self.dataUploadLabel.setText("Data File:")
+        self.dataUploadLabel.setStyleSheet("color: #36F1CD;")
+        self.dataUploadLabel.setFont(QFont('Arial', 20))
+        self.dataUploadLabel.adjustSize()
+        self.dataUploadLabel.move(80, 250)
 
         # Create the button to upload a data file
-        uploadButton = QPushButton(self)
-        uploadButton.setText("Upload")
-        uploadButton.setFont(QFont('Arial', 10))
-        uploadButton.setStyleSheet("background-color: #80475E; color: #5FBFF9;")
-        uploadButton.setGeometry(750,250, 200, 40)
-        uploadButton.clicked.connect(self.upload_button_click)
+        self.uploadButton = QPushButton(self)
+        self.uploadButton.setText("Upload")
+        self.uploadButton.setFont(QFont('Arial', 10))
+        self.uploadButton.setStyleSheet("background-color: #80475E; color: #5FBFF9;")
+        self.uploadButton.setGeometry(750,250, 200, 40)
+        self.uploadButton.clicked.connect(self.upload_button_click)
 
         # Create the label for date column text input
-        dateColLabel = QLabel(self)
-        dateColLabel.setText("Date Column Name:")
-        dateColLabel.setStyleSheet("color: #36F1CD;")
-        dateColLabel.setFont(QFont('Arial', 20))
-        dateColLabel.adjustSize()
-        dateColLabel.move(20, 350)
+        self.dateColLabel = QLabel(self)
+        self.dateColLabel.setText("Date Column Name:")
+        self.dateColLabel.setStyleSheet("color: #36F1CD;")
+        self.dateColLabel.setFont(QFont('Arial', 20))
+        self.dateColLabel.adjustSize()
+        self.dateColLabel.move(20, 350)
 
         # Create the text box for date column
-        dateColTextbox = QLineEdit(self)
-        dateColTextbox.setFont(QFont("Arial", 15))
-        dateColTextbox.setStyleSheet("background-color: white;")
-        dateColTextbox.resize(300, 35)
-        dateColTextbox.move(680, 350)
+        self.dateColTextbox = QLineEdit(self)
+        self.dateColTextbox.setFont(QFont("Arial", 15))
+        self.dateColTextbox.setStyleSheet("background-color: white;")
+        self.dateColTextbox.resize(300, 35)
+        self.dateColTextbox.move(680, 350)
 
         # Create the label for the data column text input
-        dataColLabel = QLabel(self)
-        dataColLabel.setText("Data Column Name:")
-        dataColLabel.setStyleSheet("color: #36F1CD;")
-        dataColLabel.setFont(QFont('Arial', 20))
-        dataColLabel.adjustSize()
-        dataColLabel.move(20, 450)
+        self.dataColLabel = QLabel(self)
+        self.dataColLabel.setText("Data Column Name:")
+        self.dataColLabel.setStyleSheet("color: #36F1CD;")
+        self.dataColLabel.setFont(QFont('Arial', 20))
+        self.dataColLabel.adjustSize()
+        self.dataColLabel.move(20, 450)
 
         # Create the text box for data column
-        dataColTextbox = QLineEdit(self)
-        dataColTextbox.setFont(QFont("Arial", 15))
-        dataColTextbox.setStyleSheet("background-color: white;")
-        dataColTextbox.resize(300, 35)
-        dataColTextbox.move(680, 450)
+        self.dataColTextbox = QLineEdit(self)
+        self.dataColTextbox.setFont(QFont("Arial", 15))
+        self.dataColTextbox.setStyleSheet("background-color: white;")
+        self.dataColTextbox.resize(300, 35)
+        self.dataColTextbox.move(680, 450)
 
         # Create a label for the number of independent variables
-        indepVarLabel = QLabel(self)
-        indepVarLabel.setText("Number of independent variables:")
-        indepVarLabel.setStyleSheet("color: #36F1CD;")
-        indepVarLabel.setFont(QFont('Arial', 20))
-        indepVarLabel.adjustSize()
-        indepVarLabel.move(20, 550)
+        self.indepVarLabel = QLabel(self)
+        self.indepVarLabel.setText("Number of independent variables:")
+        self.indepVarLabel.setStyleSheet("color: #36F1CD;")
+        self.indepVarLabel.setFont(QFont('Arial', 20))
+        self.indepVarLabel.adjustSize()
+        self.indepVarLabel.move(20, 550)
 
         # Create a group to contain the radio buttons
-        indepVarButtonGroup = QButtonGroup(self)
+        self.indepVarButtonGroup = QButtonGroup(self)
 
         # Create the radio buttons
-        zeroIndepVarRB = QRadioButton("0", self)
-        zeroIndepVarRB.setChecked(True) # Set the default value to 0 independent variables
-        zeroIndepVarRB.numVars = 0
-        oneIndepVarRB = QRadioButton("1", self)
-        oneIndepVarRB.numVars = 1
-        twoIndepVarRB = QRadioButton("2", self)
-        twoIndepVarRB.numVars = 2
-        threeIndepVarRB = QRadioButton("3", self)
-        threeIndepVarRB.numVars = 3
-        fourIndepVarRB = QRadioButton("4", self)
-        fourIndepVarRB.numVars = 4
-        fiveIndepVarRB = QRadioButton("5", self)
-        fiveIndepVarRB.numVars = 5
+        self.zeroIndepVarRB = QRadioButton("0", self)
+        self.zeroIndepVarRB.setChecked(True) # Set the default value to 0 independent variables
+        self.zeroIndepVarRB.numVars = 0
 
-        # Add the radio buttons to the same group
-        indepVarButtonGroup.addButton(zeroIndepVarRB)
-        indepVarButtonGroup.addButton(oneIndepVarRB)
-        indepVarButtonGroup.addButton(twoIndepVarRB)
-        indepVarButtonGroup.addButton(threeIndepVarRB)
-        indepVarButtonGroup.addButton(fourIndepVarRB)
-        indepVarButtonGroup.addButton(fiveIndepVarRB)
+        self.oneIndepVarRB = QRadioButton("1", self)
+        self.oneIndepVarRB.numVars = 1
+
+        self.twoIndepVarRB = QRadioButton("2", self)
+        self.twoIndepVarRB.numVars = 2
+
+        self.threeIndepVarRB = QRadioButton("3", self)
+        self.threeIndepVarRB.numVars = 3
+
+        self.fourIndepVarRB = QRadioButton("4", self)
+        self.fourIndepVarRB.numVars = 4
+
+        self.fiveIndepVarRB = QRadioButton("5", self)
+        self.fiveIndepVarRB.numVars = 5
+
+        # Add the radiobuttons to the same radiobutton group
+        self.indepVarButtonGroup.addButton(self.zeroIndepVarRB)
+        self.indepVarButtonGroup.addButton(self.oneIndepVarRB)
+        self.indepVarButtonGroup.addButton(self.twoIndepVarRB)
+        self.indepVarButtonGroup.addButton(self.threeIndepVarRB)
+        self.indepVarButtonGroup.addButton(self.fourIndepVarRB)
+        self.indepVarButtonGroup.addButton(self.fiveIndepVarRB)
 
         # Move the radio buttons into place
-        zeroIndepVarRB.move(450, 553)
-        oneIndepVarRB.move(500, 553)
-        twoIndepVarRB.move(550, 553)
-        threeIndepVarRB.move(600, 553)
-        fourIndepVarRB.move(650, 553)
-        fiveIndepVarRB.move(700, 553)
+        self.zeroIndepVarRB.move(450, 553)
+        self.oneIndepVarRB.move(500, 553)
+        self.twoIndepVarRB.move(550, 553)
+        self.threeIndepVarRB.move(600, 553)
+        self.fourIndepVarRB.move(650, 553)
+        self.fiveIndepVarRB.move(700, 553)
 
         # Change the font colour of the buttons 
-        zeroIndepVarRB.setStyleSheet("color: #36F1CD")
-        oneIndepVarRB.setStyleSheet("color: #36F1CD")
-        twoIndepVarRB.setStyleSheet("color: #36F1CD")
-        threeIndepVarRB.setStyleSheet("color: #36F1CD")
-        fourIndepVarRB.setStyleSheet("color: #36F1CD")
-        fiveIndepVarRB.setStyleSheet("color: #36F1CD")
+        self.zeroIndepVarRB.setStyleSheet("color: #36F1CD")
+        self.oneIndepVarRB.setStyleSheet("color: #36F1CD")
+        self.twoIndepVarRB.setStyleSheet("color: #36F1CD")
+        self.threeIndepVarRB.setStyleSheet("color: #36F1CD")
+        self.fourIndepVarRB.setStyleSheet("color: #36F1CD")
+        self.fiveIndepVarRB.setStyleSheet("color: #36F1CD")
 
         # Connect the radiobuttons to their method
-        zeroIndepVarRB.toggled.connect(self.radioButtonOnClicked)
-        oneIndepVarRB.toggled.connect(self.radioButtonOnClicked)
-        twoIndepVarRB.toggled.connect(self.radioButtonOnClicked)
-        threeIndepVarRB.toggled.connect(self.radioButtonOnClicked)
-        fourIndepVarRB.toggled.connect(self.radioButtonOnClicked)
-        fiveIndepVarRB.toggled.connect(self.radioButtonOnClicked)
+        self.zeroIndepVarRB.toggled.connect(self.radioButtonOnClicked)
+        self.oneIndepVarRB.toggled.connect(self.radioButtonOnClicked)
+        self.twoIndepVarRB.toggled.connect(self.radioButtonOnClicked)
+        self.threeIndepVarRB.toggled.connect(self.radioButtonOnClicked)
+        self.fourIndepVarRB.toggled.connect(self.radioButtonOnClicked)
+        self.fiveIndepVarRB.toggled.connect(self.radioButtonOnClicked)
 
         # Create the text box for indep var 1 column
         self.indepVar1Textbox = QLineEdit(self)
@@ -278,7 +283,7 @@ class GUIWindow(QMainWindow):
                 self.indepVar3Textbox.show()
 
                 self.indepVar4Textbox.show()
-                
+
                 self.indepVar5Textbox.show()
 
 
