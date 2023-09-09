@@ -201,45 +201,84 @@ class GUIWindow(QMainWindow):
 
             # Conditional statement to only show the appropriate amount of text boxes so user doesn't get confused by extra text entries
             if(radioButton.numVars == 0): 
-                self.indepVar1Textbox.hide() # Should implement a textbox clear after they're hidden?
+                self.indepVar1Textbox.hide() 
+                self.indepVar1Textbox.clear()
+
                 self.indepVar2Textbox.hide()
+                self.indepVar2Textbox.clear()
+
                 self.indepVar3Textbox.hide()
+                self.indepVar3Textbox.clear()
+
                 self.indepVar4Textbox.hide()
+                self.indepVar4Textbox.clear()
+
                 self.indepVar5Textbox.hide()
+                self.indepVar5Textbox.clear()
 
             elif(radioButton.numVars == 1):
                 self.indepVar1Textbox.show()
+
                 self.indepVar2Textbox.hide()
+                self.indepVar2Textbox.clear()
+
                 self.indepVar3Textbox.hide()
+                self.indepVar3Textbox.clear()
+
                 self.indepVar4Textbox.hide()
+                self.indepVar4Textbox.clear()
+
                 self.indepVar5Textbox.hide()
+                self.indepVar5Textbox.clear()
 
             elif(radioButton.numVars == 2):
                 self.indepVar1Textbox.show()
+
                 self.indepVar2Textbox.show()
+
                 self.indepVar3Textbox.hide()
+                self.indepVar3Textbox.clear()
+
                 self.indepVar4Textbox.hide()
+                self.indepVar4Textbox.clear()
+
                 self.indepVar5Textbox.hide()
+                self.indepVar5Textbox.clear()
 
             elif(radioButton.numVars == 3):
                 self.indepVar1Textbox.show()
+
                 self.indepVar2Textbox.show()
+
                 self.indepVar3Textbox.show()
+
                 self.indepVar4Textbox.hide()
+                self.indepVar4Textbox.clear()
+
                 self.indepVar5Textbox.hide()
+                self.indepVar5Textbox.clear()
 
             elif(radioButton.numVars == 4):
                 self.indepVar1Textbox.show()
+
                 self.indepVar2Textbox.show()
+
                 self.indepVar3Textbox.show()
+
                 self.indepVar4Textbox.show()
+
                 self.indepVar5Textbox.hide()
+                self.indepVar5Textbox.clear()
 
             elif(radioButton.numVars == 5):
                 self.indepVar1Textbox.show()
+
                 self.indepVar2Textbox.show()
+
                 self.indepVar3Textbox.show()
+
                 self.indepVar4Textbox.show()
+                
                 self.indepVar5Textbox.show()
 
 
