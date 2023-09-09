@@ -6,7 +6,10 @@ from PyQt5 import QtCore
 import sys
 
 class GUIWindow(QMainWindow):
+    """This is a class to create a GUI for the forecasting tool and to allow the user to tailor how the forecast will work on their data"""
     def __init__(self):
+        """Initiate all elements of the GUI window"""
+
         super().__init__()
 
         # Change the title of the window
@@ -191,11 +194,12 @@ class GUIWindow(QMainWindow):
         self.show()
 
     def upload_button_click(self):
+        """Prompt the user to upload an Excel file when they click the upload button"""
         filename = QFileDialog.getOpenFileName(self, 'Open File', '*.xlsx')
         print('Path file :', filename)
 
     def radioButtonOnClicked(self):
-        """Create a function to display the appropriate number of text fields depending on what radio button is clicked"""
+        """Display the appropriate number of text fields depending on what radio button is clicked"""
         
         # Identify what radiobutton was clicked
         radioButton = self.sender()
