@@ -147,6 +147,37 @@ class GUIWindow(QMainWindow):
         self.indepVar1Textbox.move(100, 600)
         self.indepVar1Textbox.hide()
         
+        # Create the text box for indep var 2 column
+        self.indepVar2Textbox = QLineEdit(self)
+        self.indepVar2Textbox.setFont(QFont("Arial", 15))
+        self.indepVar2Textbox.setStyleSheet("background-color: white;")
+        self.indepVar2Textbox.resize(100, 35)
+        self.indepVar2Textbox.move(250, 600)
+        self.indepVar2Textbox.hide()
+
+        # Create the text box for indep var 3 column
+        self.indepVar3Textbox = QLineEdit(self)
+        self.indepVar3Textbox.setFont(QFont("Arial", 15))
+        self.indepVar3Textbox.setStyleSheet("background-color: white;")
+        self.indepVar3Textbox.resize(100, 35)
+        self.indepVar3Textbox.move(400, 600)
+        self.indepVar3Textbox.hide()
+
+        # Create the text box for indep var 4 column
+        self.indepVar4Textbox = QLineEdit(self)
+        self.indepVar4Textbox.setFont(QFont("Arial", 15))
+        self.indepVar4Textbox.setStyleSheet("background-color: white;")
+        self.indepVar4Textbox.resize(100, 35)
+        self.indepVar4Textbox.move(550, 600)
+        self.indepVar4Textbox.hide()
+
+        # Create the text box for indep var 5 column
+        self.indepVar5Textbox = QLineEdit(self)
+        self.indepVar5Textbox.setFont(QFont("Arial", 15))
+        self.indepVar5Textbox.setStyleSheet("background-color: white;")
+        self.indepVar5Textbox.resize(100, 35)
+        self.indepVar5Textbox.move(700, 600)
+        self.indepVar5Textbox.hide()
 
 
 
@@ -165,14 +196,54 @@ class GUIWindow(QMainWindow):
         radioButton = self.sender()
         if radioButton.isChecked():
 
-            # Add in conditional statements to hide text fields depending on what radiobutton was selected
-            print(radioButton.numVars) # Place holder code for testing buttons
+            # Debugging code
+            print(f"radio button clicked: {radioButton.numVars}") 
 
-            if(radioButton.numVars == 0):
-                self.indepVar1Textbox.hide()
+            # Conditional statement to only show the appropriate amount of text boxes so user doesn't get confused by extra text entries
+            if(radioButton.numVars == 0): 
+                self.indepVar1Textbox.hide() # Should implement a textbox clear after they're hidden?
+                self.indepVar2Textbox.hide()
+                self.indepVar3Textbox.hide()
+                self.indepVar4Textbox.hide()
+                self.indepVar5Textbox.hide()
 
             elif(radioButton.numVars == 1):
                 self.indepVar1Textbox.show()
+                self.indepVar2Textbox.hide()
+                self.indepVar3Textbox.hide()
+                self.indepVar4Textbox.hide()
+                self.indepVar5Textbox.hide()
+
+            elif(radioButton.numVars == 2):
+                self.indepVar1Textbox.show()
+                self.indepVar2Textbox.show()
+                self.indepVar3Textbox.hide()
+                self.indepVar4Textbox.hide()
+                self.indepVar5Textbox.hide()
+
+            elif(radioButton.numVars == 3):
+                self.indepVar1Textbox.show()
+                self.indepVar2Textbox.show()
+                self.indepVar3Textbox.show()
+                self.indepVar4Textbox.hide()
+                self.indepVar5Textbox.hide()
+
+            elif(radioButton.numVars == 4):
+                self.indepVar1Textbox.show()
+                self.indepVar2Textbox.show()
+                self.indepVar3Textbox.show()
+                self.indepVar4Textbox.show()
+                self.indepVar5Textbox.hide()
+
+            elif(radioButton.numVars == 5):
+                self.indepVar1Textbox.show()
+                self.indepVar2Textbox.show()
+                self.indepVar3Textbox.show()
+                self.indepVar4Textbox.show()
+                self.indepVar5Textbox.show()
+
+
+            
 
 
 
