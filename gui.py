@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5 import QtCore
+from forecast import ForecastTool as ft
 
 # Needed for access to command line arguments
 import sys
