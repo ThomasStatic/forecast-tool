@@ -187,6 +187,30 @@ class GUIWindow(QMainWindow):
         self.indepVar5Textbox.move(700, 600)
         self.indepVar5Textbox.hide()
 
+        # Create the button to run the forecast in conservative mode
+        self.uploadButton = QPushButton(self)
+        self.uploadButton.setText("Conservative")
+        self.uploadButton.setFont(QFont('Arial', 15))
+        self.uploadButton.setStyleSheet("background-color: #FF312E; color: 5FBFF9;")
+        self.uploadButton.setGeometry(80, 650, 200, 40)
+        #self.uploadButton.clicked.connect(self.upload_button_click)
+
+        # Create the button to run the forecast in accuracy mode
+        self.uploadButton = QPushButton(self)
+        self.uploadButton.setText("Unbiased")
+        self.uploadButton.setFont(QFont('Arial', 15))
+        self.uploadButton.setStyleSheet("background-color: #FF312E; color: 5FBFF9;")
+        self.uploadButton.setGeometry(415, 650, 200, 40)
+        #self.uploadButton.clicked.connect(self.upload_button_click)
+
+        # Create the button to run the forecast in aggresive mode
+        self.uploadButton = QPushButton(self)
+        self.uploadButton.setText("Aggressive")
+        self.uploadButton.setFont(QFont('Arial', 15))
+        self.uploadButton.setStyleSheet("background-color: #FF312E; color: 5FBFF9;")
+        self.uploadButton.setGeometry(750, 650, 200, 40)
+        #self.uploadButton.clicked.connect(self.upload_button_click)
+
 
 
 
