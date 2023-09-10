@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5 import QtCore
 from forecast import ForecastTool as ft
+import pandas as pd
 
 # Needed for access to command line arguments
 import sys
@@ -205,7 +206,7 @@ class GUIWindow(QMainWindow):
         self.uploadButton.setFont(QFont('Arial', 15))
         self.uploadButton.setStyleSheet("background-color: #FF312E; color: 5FBFF9;")
         self.uploadButton.setGeometry(415, 650, 200, 40)
-        #self.uploadButton.clicked.connect(self.upload_button_click)
+        self.uploadButton.clicked.connect(self.unBiasedButtonClick)
 
         # Create the button to run the forecast in aggresive mode
         self.uploadButton = QPushButton(self)
@@ -325,7 +326,13 @@ class GUIWindow(QMainWindow):
     def unBiasedButtonClick(self):
         """Run the forecast without any bias"""
 
-        forecast = ft()
+        forecast = ft(filepath=self.filepath, dateCol=self.dateColTextbox.text())
+
+        forecastResults = forecast.run_forecast_unbiased()
+
+        print(forecastResults)
+
+        
 
 
             
