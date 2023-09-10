@@ -55,6 +55,9 @@ class GUIWindow(QMainWindow):
         self.uploadButton.setGeometry(750,250, 200, 40)
         self.uploadButton.clicked.connect(self.upload_button_click)
 
+        # Variable to store the user's data filepath
+        self.filepath = "Default value"
+
         # Create the label for date column text input
         self.dateColLabel = QLabel(self)
         self.dateColLabel.setText("Date Column Name:")
@@ -220,8 +223,12 @@ class GUIWindow(QMainWindow):
 
     def upload_button_click(self):
         """Prompt the user to upload an Excel file when they click the upload button"""
-        filename = QFileDialog.getOpenFileName(self, 'Open File', '*.xlsx')
-        print('Path file :', filename)
+        file, check = QFileDialog.getOpenFileName(None, "QFileDialog.getOpenFileName()", "", "Excel Files (*.xlsx)")
+
+        if check:
+            print(file)
+            self.filepath = file
+        
 
     def radioButtonOnClicked(self):
         """Display the appropriate number of text fields depending on what radio button is clicked"""
@@ -314,6 +321,11 @@ class GUIWindow(QMainWindow):
                 self.indepVar4Textbox.show()
 
                 self.indepVar5Textbox.show()
+
+    def unBiasedButtonClick(self):
+        """Run the forecast without any bias"""
+
+        forecast = ft()
 
 
             

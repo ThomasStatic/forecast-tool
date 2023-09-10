@@ -49,14 +49,14 @@ class ForecastTool:
     
 
 
-test = ForecastTool(filepath="C:\\Users\Thomas\\Downloads\\forecast-tool\\testDataZeroIndepVars.xlsx", dateCol="Date")
+#test = ForecastTool(filepath="C:\\Users\Thomas\\Downloads\\forecast-tool\\testDataZeroIndepVars.xlsx", dateCol="Date")
 #print("\n\n\n--------------Model--------------")
 #print(test.model)
-print("\n\n\n\n\n\n\n-------------Forecast-------------")
-print(test.forecasts_df)
-print("\n\n\n\n\n\n\n--------------Upper--------------")
-print(test.forecasts_up)
-print("\n\n\n\n\n\n\n--------------Lower--------------")
-print(test.forecasts_down)
+#print("\n\n\n\n\n\n\n-------------Forecast-------------")
+#print(test.forecasts_df)
+#print("\n\n\n\n\n\n\n--------------Upper--------------")
+#print(test.forecasts_up)
+#print("\n\n\n\n\n\n\n--------------Lower--------------")
+#print(test.forecasts_down)
 
 
