@@ -65,7 +65,7 @@ class ForecastTool:
 
         forecasts_down = prediction.lower_forecast
 
-        return forecasts_df
+        return forecasts_down
 
     
 
