@@ -39,10 +39,6 @@ class ForecastTool:
         # Create a dataframe of unbiased prediction results
         forecasts_df = prediction.forecast
 
-        #forecasts_up = prediction.upper_forecast
-
-        #forecasts_down = prediction.lower_forecast
-
         return forecasts_df
     
     def run_forecast_conservative(self):
@@ -66,6 +62,28 @@ class ForecastTool:
         forecasts_down = prediction.lower_forecast
 
         return forecasts_down
+    
+    def run_forecast_aggresive(self):
+        """Run the forecast and returns the most aggressive estimations for each date"""
+
+        # Create a autoTS model
+        model = AutoTS(
+            forecast_length=12, 
+            frequency='infer',
+            ensemble='auto',
+            max_generations=4,
+            num_validations=2,
+        )
+
+        # Fit the data set to the model
+        model = model.fit(self.df)
+
+        # Run predictions on the data
+        prediction = model.predict()
+
+        forecasts_up = prediction.upper_forecast
+
+        return forecasts_up
 
     
 
