@@ -332,6 +332,15 @@ class GUIWindow(QMainWindow):
 
         print(forecastResults)
 
+    def conservativeButtonClick(self):
+        """Run the forecast conservatively"""
+
+        forecast = ft(filepath=self.filepath, dateCol=self.dateColTextbox.text())
+
+        forecastResults = forecast.run_forecast_conservative()
+
+        print(forecastResults)
+
         
 
 
