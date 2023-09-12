@@ -341,6 +341,15 @@ class GUIWindow(QMainWindow):
 
         print(forecastResults)
 
+    def aggressiveButtonClick(self):
+        """Run the forecast aggressively"""
+
+        forecast = ft(filepath=self.filepath, dateCol=self.dateColTextbox.text())
+
+        forecastResults = forecast.run_forecast_aggresive()
+
+        print(forecastResults)
+
         
 
 
