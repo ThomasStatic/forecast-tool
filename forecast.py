@@ -5,7 +5,7 @@ import pandas as pd
 class ForecastTool:
     """A class to forecast out excel data using AutoTS"""
 
-    def __init__(self, filepath, dateCol):
+    def __init__(self, filepath, dateCol, dataCol, indep1Name, indep2Name, indep3Name, indep4Name, indep5Name):
         """Initiate all class variables"""
         
         # Convert data to a pandas dataframe

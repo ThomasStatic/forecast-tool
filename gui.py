@@ -167,6 +167,7 @@ class GUIWindow(QMainWindow):
         self.indepVar2Textbox.setStyleSheet("background-color: white;")
         self.indepVar2Textbox.resize(100, 35)
         self.indepVar2Textbox.move(250, 600)
+        self.indepVar2Textbox.setText("")
         self.indepVar2Textbox.hide()
 
         # Create the text box for indep var 3 column
@@ -175,6 +176,7 @@ class GUIWindow(QMainWindow):
         self.indepVar3Textbox.setStyleSheet("background-color: white;")
         self.indepVar3Textbox.resize(100, 35)
         self.indepVar3Textbox.move(400, 600)
+        self.indepVar3Textbox.setText("")
         self.indepVar3Textbox.hide()
 
         # Create the text box for indep var 4 column
@@ -183,6 +185,7 @@ class GUIWindow(QMainWindow):
         self.indepVar4Textbox.setStyleSheet("background-color: white;")
         self.indepVar4Textbox.resize(100, 35)
         self.indepVar4Textbox.move(550, 600)
+        self.indepVar4Textbox.setText("")
         self.indepVar4Textbox.hide()
 
         # Create the text box for indep var 5 column
@@ -191,6 +194,7 @@ class GUIWindow(QMainWindow):
         self.indepVar5Textbox.setStyleSheet("background-color: white;")
         self.indepVar5Textbox.resize(100, 35)
         self.indepVar5Textbox.move(700, 600)
+        self.indepVar5Textbox.setText("")
         self.indepVar5Textbox.hide()
 
         # Create the button to run the forecast in conservative mode
