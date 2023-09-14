@@ -158,6 +158,7 @@ class GUIWindow(QMainWindow):
         self.indepVar1Textbox.setStyleSheet("background-color: white;")
         self.indepVar1Textbox.resize(100, 35)
         self.indepVar1Textbox.move(100, 600)
+        self.indepVar1Textbox.setText("")
         self.indepVar1Textbox.hide()
         
         # Create the text box for indep var 2 column
@@ -239,7 +240,7 @@ class GUIWindow(QMainWindow):
         if radioButton.isChecked():
 
             # Debugging code
-            print(f"radio button clicked: {radioButton.numVars}") 
+            print(self.indepVar1Textbox.text() == "") 
 
             # Conditional statement to only show the appropriate amount of text boxes so user doesn't get confused by extra text entries
             if(radioButton.numVars == 0): 
